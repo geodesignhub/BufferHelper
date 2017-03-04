@@ -19,8 +19,8 @@ app.use(csrf({ cookie: true }));
 app.get('/', function(request, response) {
     var opts = {};
     if (request.query.apitoken && request.query.projectid && request.query.diagramid) {
-        var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-        // var baseurl = 'http://local.dev:8000/api/v1/projects/';
+        // var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
+        var baseurl = 'http://local.dev:8000/api/v1/projects/';
         var apikey = request.query.apitoken;
         var cred = "Token " + apikey;
         var projectid = request.query.projectid;
@@ -57,7 +57,7 @@ app.get('/', function(request, response) {
         });
 
     } else {
-        opts = { 'csrfToken': request.csrfToken(), 'apitoken': '0', 'projectid': '0', 'diagramid': '0' };
+        opts = { 'csrfToken': request.csrfToken(), 'systems':'0', 'apitoken': '0', 'projectid': '0', 'diagramdetail': '0' };
         response.render('diagbuffer', opts);
     }
 
@@ -65,8 +65,8 @@ app.get('/', function(request, response) {
 
 app.post('/adddiagram/', function(request, response) {
     // post json back 
-    var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-    // var baseurl = 'http://local.dev:8000/api/v1/projects/';
+    // var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
+    var baseurl = 'http://local.dev:8000/api/v1/projects/';
     var projectid = request.body.projectid;
     var apitoken = request.body.apitoken;
     var diagname = request.body.diagname;

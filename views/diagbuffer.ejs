@@ -213,6 +213,8 @@
         var diagramdetail = <%- diagramdetail %>;
         var apitoken = "<%= apitoken  %>"; //var test is now assigned to getTest which will only work on browsers
         var projectid = "<%= projectid %>";
+        if (diagramdetail !==0){
+
         $("#diagName").html(diagramdetail['description']);
         generateSystemCB(systems);
         var inputmap = L.map('inputmap', {'zoomControl':false, 'dragging':false,'touchZoom':false, 'scrollWheelZoom':false,'doubleClickZoom':false});
@@ -221,7 +223,6 @@
             maxZoom: 18, 
         }).addTo(inputmap);
         var inputLayer = L.featureGroup().addTo(inputmap);
-
 
         var diagramLayer = L.geoJSON(diagramdetail['geojson'], {
             style: miniMapstyleComp
@@ -235,6 +236,7 @@
             maxZoom: 18,
         }).addTo(outputmap);
 
+        }
         function generateSystemCB(systems) {
             $('#systemsCB').append("<p><label>Choose destination System</label> ");
             for (var x = 0; x < systems.length; x++) {
