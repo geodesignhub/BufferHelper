@@ -1,11 +1,4 @@
-# Geodesign Hub Decision Model Helper
-This is small plugin to help with a decision model in a Geodesign Project. It uses the Geodesign Hub [API](http://www.geodesignsupport.com/section/api/). Once the credentials and the project ID is entered, the system downloads all evaluation maps for the systems. Once downlaoded, sliders are generated for each of the systems. These sliders control the transperency of the maps. The higher the slider value, the more opaque the map. This technique can be can be useful to understand how the decision model performs spatially. 
-
-![alt text][logo]
-
-[logo]: http://i.imgur.com/gLmvV1q.png "Geodesign Hub Desicion model"
-
-
+# Buffer Service
 
 
 ---
