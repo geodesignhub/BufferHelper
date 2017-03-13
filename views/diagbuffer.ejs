@@ -55,8 +55,9 @@
         <!-- Heading Row -->
         <div class="row">
             <div class="col-md-12">
-                
-                <p class="description">This plugin downloads a diagram from Geodesign Hub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesign Hub API</a> and is opensource and the code is avaiable on <a href="https://github.com/hrishiballal/GDHDiagramBufferService/">GitHub</a>.</p>
+
+                <p class="description">This plugin downloads a diagram from Geodesign Hub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesign Hub API</a> and is opensource
+                    and the code is avaiable on <a href="https://github.com/hrishiballal/GDHDiagramBufferService/">GitHub</a>.</p>
             </div>
         </div>
         <div class="row">
@@ -72,32 +73,35 @@
             </div>
         </div>
         <div class="row">
-         <div class="col-md-12">
-            <p> Buffer distance: <label class="radio-inline"><input type="radio" name="bufferA" value="0.01">10m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.05" checked>50m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.1" checked>100m</label>
-                <label class="radio-inline"><input type="radio" name="bufferA" value="0.2">200m</label>
-                <label class="radio-inline"><input type="radio" name="bufferA" value="0.5">500m</label>
-            </p>
+            <div class="col-md-12">
+                <p> Buffer distance: <label class="radio-inline"><input type="radio" name="bufferA" value="0.01">10m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.05" checked>50m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.1" checked>100m</label>
+                    <label class="radio-inline"><input type="radio" name="bufferA" value="0.2">200m</label>
+                    <label class="radio-inline"><input type="radio" name="bufferA" value="0.5">500m</label>
+                </p>
 
-            <p><button id="computeBuffButton" type="button" class="btn btn-info"><i class="glyphicon glyphicon-certificate"></i> Compute Buffer</button>&nbsp;&nbsp;<span id="loadingGIF"><img src="/assets/loaders/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</span></p>
-            <br>
-        </div> 
+                <p><button id="computeBuffButton" type="button" class="btn btn-info"><i class="glyphicon glyphicon-certificate"></i> Compute Buffer</button>&nbsp;&nbsp;<span id="loadingGIF"><img src="/assets/loaders/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</span>
+                </p>
+                <br>
+            </div>
         </div>
-        
-        <div class="row"><br><div class="col-md-12">
-            <h3>Add Buffer as a new diagram</h3><br>
-            <div id="systemsCB"></div><br>
-             <label>Upload as Project or Policy</label> <p><label class="radio-inline"><input type="radio" name="projorpol" value="project">Project</label>
-                <label class="radio-inline"><input type="radio" name="projorpol" value="policy">Policy</label>
-            </p><br>
 
-            <label>Give the Diagram a name</label>
-            <ul class="input-list style-2 clearfix">
-                <li>
-                    <input type="text" id="newDiagName" placeholder="e.g. 50m buffer of IND 6">
-                </li>
-            </ul>
-            <br>
-            <button id="addDiagram" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"></i> Add as new Diagram </button>
+        <div class="row"><br>
+            <div class="col-md-12">
+                <h3>Add Buffer as a new diagram</h3><br>
+                <div id="systemsCB"></div><br>
+                <label>Upload as Project or Policy</label>
+                <p><label class="radio-inline"><input type="radio" name="projorpol" value="project">Project</label>
+                    <label class="radio-inline"><input type="radio" name="projorpol" value="policy">Policy</label>
+                </p><br>
+
+                <label>Give the Diagram a name</label>
+                <ul class="input-list style-2 clearfix">
+                    <li>
+                        <input type="text" id="newDiagName" placeholder="e.g. 50m buffer of IND 6">
+                    </li>
+                </ul>
+                <br>
+                <button id="addDiagram" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"></i> Add as new Diagram </button>
             </div>
         </div>
         <!-- /.col-md-4 -->
@@ -110,7 +114,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>&copy; 2017 <a href="https://www.hrishikeshballal.net/">Hrishikesh Ballal</a>, see the <a href="https://github.com/hrishiballal/GDHDiagramBufferService/">GitHub repository</a> for more information.</p>
+                    <p>&copy; 2017 <a href="https://www.geodesignhub.com/">Geodesign Hub</a>, see the <a href="https://github.com/geodesignhub/BufferHelper">GitHub repository</a> for more information.</p>
                 </div>
             </div>
         </footer>
@@ -167,20 +171,24 @@
             }
 
         }
-        function bindRadioChangeBtn(){
-                $('input[type=radio][name=sysCB]').change(function() {
-                   var sysid = parseInt($('input[name=sysCB]:checked')[0].id);
-                   for (var k=0; k < systems.length;k++){
-                       var cursys = systems[k];
-                       var cursyscolor = cursys.syscolor;
-                       if (cursys.id===sysid){
-                           if(opGJ.features.length > 0 ){
-                               opFG.setStyle({'color':cursyscolor, 'fillColor':cursyscolor});
-                           }
-                           break;
-                       }
-                   }
-                });
+
+        function bindRadioChangeBtn() {
+            $('input[type=radio][name=sysCB]').change(function() {
+                var sysid = parseInt($('input[name=sysCB]:checked')[0].id);
+                for (var k = 0; k < systems.length; k++) {
+                    var cursys = systems[k];
+                    var cursyscolor = cursys.syscolor;
+                    if (cursys.id === sysid) {
+                        if (opGJ.features.length > 0) {
+                            opFG.setStyle({
+                                'color': cursyscolor,
+                                'fillColor': cursyscolor
+                            });
+                        }
+                        break;
+                    }
+                }
+            });
         }
 
         function setSVGStyle(reqColor) {
@@ -228,32 +236,45 @@
         var diagramdetail = <%- diagramdetail %>;
         var apitoken = "<%= apitoken  %>"; //var test is now assigned to getTest which will only work on browsers
         var projectid = "<%= projectid %>";
-        if (diagramdetail !==0){
+        if (diagramdetail !== 0) {
 
-        $("#diagName").html(diagramdetail['description']);
-        generateSystemCB(systems);
-        // bind system change addEvent
-        bindRadioChangeBtn();
-        var inputmap = L.map('inputmap', {'zoomControl':false, 'dragging':false,'touchZoom':false, 'scrollWheelZoom':false,'doubleClickZoom':false});
-        var inputbaseLayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
-            maxZoom: 18, 
-        }).addTo(inputmap);
-        var inputLayer = L.featureGroup().addTo(inputmap);
+            $("#diagName").html(diagramdetail['description']);
+            generateSystemCB(systems);
+            // bind system change addEvent
+            bindRadioChangeBtn();
+            var inputmap = L.map('inputmap', {
+                'zoomControl': false,
+                'dragging': false,
+                'touchZoom': false,
+                'scrollWheelZoom': false,
+                'doubleClickZoom': false
+            });
+            var inputbaseLayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
+                maxZoom: 18,
+            }).addTo(inputmap);
+            var inputLayer = L.featureGroup().addTo(inputmap);
 
-        var diagramLayer = L.geoJSON(diagramdetail['geojson'], {
-            style: miniMapstyleComp
-        }).addTo(inputLayer);
-        inputmap.fitBounds(inputLayer.getBounds());
+            var diagramLayer = L.geoJSON(diagramdetail['geojson'], {
+                style: miniMapstyleComp
+            }).addTo(inputLayer);
+            inputmap.fitBounds(inputLayer.getBounds());
 
-        var outputmap = L.map('outputmap',{'zoomControl':false, 'dragging':false, 'touchZoom':false, 'scrollWheelZoom':false,'doubleClickZoom':false});
-        var opFG = L.featureGroup().addTo(outputmap);
-        L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
-            maxZoom: 18,
-        }).addTo(outputmap);
+            var outputmap = L.map('outputmap', {
+                'zoomControl': false,
+                'dragging': false,
+                'touchZoom': false,
+                'scrollWheelZoom': false,
+                'doubleClickZoom': false
+            });
+            var opFG = L.featureGroup().addTo(outputmap);
+            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
+                maxZoom: 18,
+            }).addTo(outputmap);
 
         }
+
         function generateSystemCB(systems) {
             $('#systemsCB').append("<p><label>Choose destination System</label> ");
             for (var x = 0; x < systems.length; x++) {
@@ -334,7 +355,7 @@
                     data: data
                 });
                 promise.done(function(data) {
-                    
+
                     humane.log(data.body.status, {
                         addnCls: 'humane-flatty-success'
                     });
