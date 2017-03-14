@@ -3,7 +3,7 @@ This plugin takes diagrams from [Geodesign Hub](https://www.geodesignhub.com/), 
 
 ## Screenshots
 Buffer the diagram
-![screenshot](https://i.imgur.com/xiA7PTo.png)
+![screenshot](https://i.imgur.com/1jSTd5U.png)
 
 Upload the diagram in a different system. 
-![screenshot2](https://i.imgur.com/C9Z3ZCQ.png)
+![screenshot2](https://i.imgur.com/QeOOEDE.png)
