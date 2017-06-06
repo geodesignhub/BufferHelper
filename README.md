@@ -5,7 +5,7 @@ This plugin takes diagram information a project in Geodesignhub using the [Geode
 This plugin can be added to your project in the Administration panel
 
 ## Screenshots
-**Interface Details***
+**Interface Details**
 Set the buffer distance and compute the buffer, then set details to add the computed buffer as a new diagram. 
 
 ![screenshot0](https://i.imgur.com/U2wqWUG.jpg)
