@@ -1,5 +1,5 @@
 # Diagram Buffer Service
-This plugin takes diagram information a project in Geodesignhub using the [Geodesign Hub](https://www.geodesignhub.com/). It then provides a way to buffer them and then upload the buffer to a different or same system as a new diagram available to be used in a design. This is especially useful when you are designing protection zones, conservation areas etc. 
+This plugin takes diagram information a project in Geodesignhub using the [Geodesignhub](https://www.geodesignhub.com/). It then provides a way to buffer them and then upload the buffer to a different or same system as a new diagram available to be used in a design. This is especially useful when you are designing protection zones, conservation areas etc. 
 
 ### Adding the plugin
 This plugin can be added to your project in the Administration panel
