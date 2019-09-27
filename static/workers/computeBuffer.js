@@ -9,7 +9,7 @@ function computeBufferSubstract(buffer, diagGJ) {
     for (var x = 0; x < featlen; x++) {
         var curfeat = dGJ['features'][x];
         var curfeatprops = curfeat.properties;
-        var newFeat = turf.buffer(curfeat, buffer, 'kilometers');
+        var newFeat = turf.buffer(curfeat, buffer, {units:'kilometers'});
         var diff = turf.difference(newFeat, curfeat);
         diff.properties = curfeatprops;
         opFC.features.push(diff);

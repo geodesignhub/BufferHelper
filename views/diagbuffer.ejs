@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Geodesign Hub Diagram Buffer</title>
+    <title>Geodesignhub Diagram Buffer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" lang="en" content="Geodesign Hub Evaluation Maps Builder">
+    <meta name="Description" lang="en" content="Geodesignhub Diagrams Builder">
     <meta name="author" content="Hrishikesh Ballal">
     <meta name="robots" content="index, follow">
     <!-- icons -->
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Geodesign Hub Diagram Buffer</a>
+                <a class="navbar-brand" href="#">Geodesignhub Diagram Buffer</a>
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-collapse -->
@@ -56,8 +56,8 @@
         <div class="row">
             <div class="col-md-12">
 
-                <p class="description">This plugin downloads a diagram from Geodesign Hub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesign Hub API</a> and is opensource
-                    and the code is avaiable on <a href="https://github.com/hrishiballal/GDHDiagramBufferService/">GitHub</a>.</p>
+                <p class="description">This plugin downloads a diagram from Geodesignhub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesignhub API</a> and is opensource
+                    and the code is avaiable on <a href="https://github.com/geodesignhub/DiagramBuffer/">GitHub</a>.</p>
             </div>
         </div>
         <div class="row">
@@ -172,7 +172,7 @@
 
         }
 
-        function bindRadioChangeBtn() {
+        function bindSysRadioChangeBtn() {
             $('input[type=radio][name=sysCB]').change(function() {
                 var sysid = parseInt($('input[name=sysCB]:checked')[0].id);
                 for (var k = 0; k < systems.length; k++) {
@@ -241,7 +241,7 @@
             $("#diagName").html(diagramdetail['description']);
             generateSystemCB(systems);
             // bind system change addEvent
-            bindRadioChangeBtn();
+            bindSysRadioChangeBtn();
             var inputmap = L.map('inputmap', {
                 'zoomControl': false,
                 'dragging': false,
@@ -254,7 +254,7 @@
                 maxZoom: 18,
             }).addTo(inputmap);
             var inputLayer = L.featureGroup().addTo(inputmap);
-
+            
             var diagramLayer = L.geoJSON(diagramdetail['geojson'], {
                 style: miniMapstyleComp
             }).addTo(inputLayer);
@@ -278,7 +278,6 @@
         function generateSystemCB(systems) {
             $('#systemsCB').append("<p><label>Choose destination System</label> ");
             for (var x = 0; x < systems.length; x++) {
-
                 $('#systemsCB').append('<input name="sysCB" id=' + "'" + systems[x].id + "'" + 'type="radio" /> <span class="square c-' + systems[x].syscolor.substring(1) + '"></span>&nbsp;&nbsp;' + systems[x].sysname + '</input>&nbsp;&nbsp;');
             }
             $('#systemsCB').append("</p>");

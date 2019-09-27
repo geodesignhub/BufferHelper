@@ -18,9 +18,10 @@ app.use(csrf({ cookie: true }));
 
 app.get('/', function(request, response) {
     var opts = {};
+    
     if (request.query.apitoken && request.query.projectid && request.query.diagramid) {
         var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-        // var baseurl = 'http://local.dev:8000/api/v1/projects/';
+        // var baseurl = 'http://local.test:8000/api/v1/projects/';
         var apikey = request.query.apitoken;
         var cred = "Token " + apikey;
         var projectid = request.query.projectid;
@@ -29,7 +30,7 @@ app.get('/', function(request, response) {
         var systemsurl = baseurl + projectid + '/systems/';
 
         var URLS = [diagramdetailurl, systemsurl];
-
+        
         async.map(URLS, function(url, done) {
             req({
                 url: url,
@@ -44,6 +45,7 @@ app.get('/', function(request, response) {
                 return done(null, JSON.parse(body));
             });
         }, function(err, results) {
+            
             if (err) return response.sendStatus(500);
             opts = {
                 "csrfToken": request.csrfToken(),
@@ -66,7 +68,7 @@ app.get('/', function(request, response) {
 app.post('/adddiagram/', function(request, response) {
     // post json back 
     var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-    // var baseurl = 'http://local.dev:8000/api/v1/projects/';
+    // var baseurl = 'http://local.test:8000/api/v1/projects/';
     var projectid = request.body.projectid;
     var apitoken = request.body.apitoken;
     var diagname = request.body.diagname;
