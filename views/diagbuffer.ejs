@@ -29,26 +29,13 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Geodesignhub Diagram Buffer</a>
-            </div>
-            <!-- /.navbar-header -->
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <!-- /.navbar -->
-    <!-- Page Content -->
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#">Geodesignhub Diagram Buffer</a>
+          
+        </nav>
+      </header>
     <div class="container-fluid">
         <!-- /.row -->
         <br>
@@ -56,8 +43,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                <p class="description">This plugin downloads a diagram from Geodesignhub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesignhub API</a> and is opensource
-                    and the code is avaiable on <a href="https://github.com/geodesignhub/DiagramBuffer/">GitHub</a>.</p>
+                <p class="description">This plugin downloads a diagram from Geodesignhub and provides a way to buffer it and upload it back as a new diagram to the project. This project uses the <a href="https://www.geodesignhub.com/api/">Geodesignhub API</a>.</p>
             </div>
         </div>
         <div class="row">
@@ -72,11 +58,10 @@
                 <div id="outputmap"></div>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-12">
-                <p> Buffer distance: <label class="radio-inline"><input type="radio" name="bufferA" value="0.01">10m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.05" checked>50m</label><label class="radio-inline"><input type="radio" name="bufferA" value="0.1" checked>100m</label>
-                    <label class="radio-inline"><input type="radio" name="bufferA" value="0.2">200m</label>
-                    <label class="radio-inline"><input type="radio" name="bufferA" value="0.5">500m</label>
+                <p> Buffer distance: <label class="radio-inline"><input type="radio" name="bufferA" value="0.01">10m</label>&nbsp;&nbsp;<label class="radio-inline"><input type="radio" name="bufferA" value="0.05" checked>50m</label>&nbsp;<label class="radio-inline"><input type="radio" name="bufferA" value="0.1" checked>100m</label>&nbsp;&nbsp;<label class="radio-inline"><input type="radio" name="bufferA" value="0.2">200m</label>&nbsp;<label class="radio-inline"><input type="radio" name="bufferA" value="0.5">500m</label>
                 </p>
 
                 <p><button id="computeBuffButton" type="button" class="btn btn-info"><i class="glyphicon glyphicon-certificate"></i> Compute Buffer</button>&nbsp;&nbsp;<span id="loadingGIF"><img src="/assets/loaders/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</span>
@@ -90,8 +75,8 @@
                 <h3>Add Buffer as a new diagram</h3><br>
                 <div id="systemsCB"></div><br>
                 <label>Upload as Project or Policy</label>
-                <p><label class="radio-inline"><input type="radio" name="projorpol" value="project">Project</label>
-                    <label class="radio-inline"><input type="radio" name="projorpol" value="policy">Policy</label>
+                <p><label class="radio-inline"><input type="radio" name="projorpol" value="project"> Project</label>
+                    <label class="radio-inline"><input type="radio" name="projorpol" value="policy"> Policy</label>
                 </p><br>
 
                 <label>Give the Diagram a name</label>
@@ -107,16 +92,11 @@
         <!-- /.col-md-4 -->
 
         <!-- /.row -->
-        <hr>
-
-        <br><br>
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>&copy; 2017 <a href="https://www.geodesignhub.com/">Geodesignhub</a>, see the <a href="https://github.com/geodesignhub/BufferHelper">GitHub repository</a> for more information.</p>
-                </div>
-            </div>
+        <br><br><br><br>
+        <hr>       
+        
+        <footer class="text-muted">
+            <p>Geodesignhub Buffer Helper, &copy; 2017 <a href="https://www.geodesignhub.com/">Geodesignhub</a>, see the <a href="https://github.com/geodesignhub/BufferHelper">GitHub repository</a> for more information.</p>            
         </footer>
         <div id="drawing"></div>
     </div>
