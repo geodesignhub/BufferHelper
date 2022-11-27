@@ -1,7 +1,7 @@
 {
     "name": "gdhbufferhelper",
     "version": "1.0.0",
-    "description": "A Geodesign Hub plugin to help buffer a Geodesign Hub Diagram and upload it back as a new diagram.",
+    "description": "A Geodesignhub plugin to help buffer a Geodesignhub Diagram and upload it back as a new diagram.",
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
