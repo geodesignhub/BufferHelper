@@ -116,8 +116,8 @@
 
         function miniMapstyleComp(feature) {
             // console.log(feature.properties)
-            var curFeature = feature.geometry.type;
-            if (curFeature === 'LineString') {
+            var current_feature = feature.geometry.type;
+            if (current_feature === 'LineString') {
                 // console.log(feature)
                 return {
                     weight: 2,
